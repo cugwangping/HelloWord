@@ -3,7 +3,7 @@
 wifi_connection()
 {
 	# Which Interface do you want to check/fix
-	wlan='eno16777736'
+	wlan='wlan'
 	##################################################################
 	echo
 	echo "Starting WiFi check for $wlan"
@@ -31,7 +31,7 @@ wifi_connection()
 			echo "Network not logged in"
 			echo "Wireless connection attempt..."
 			((i++))
-			# 只需要无线网的地址
+			# 脰禄脨猫脪陋脦脼脧脽脥酶碌脛碌脴脰路
 			ipaddress=`ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"`
 			curl "http://202.114.205.115/lanmanwxapp/network_login.php?username=wyc&ip_address=$ipaddress&channel_id=Channel3&login_type=normal&frequently=0"
 			let result=0
